@@ -60,3 +60,27 @@ h4 {
     grid-template-columns: 1fr;
   }
 }
+/* signup component */
+.signup {
+  height: 500px;
+}
+/* form component */
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2rem 0;
+}
+
+.form label {
+  margin-top: 1rem;
+}
+/* login component */
+.login {
+  height: 330px;
+}
+
+@media only screen and (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
