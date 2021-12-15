@@ -1,6 +1,6 @@
 .button {
   height: 44px;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 .button {
   background: var(--successGreen);

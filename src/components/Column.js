@@ -1,11 +1,11 @@
 import React from 'react';
+import signUpSvg from '../assets/images/signup.svg';
+import Button from './Button';
+import CheckBox from './CheckBox';
 import Form from './Form';
 import Illustration from './Illustration';
-import signUpSvg from '../assets/images/signup.svg';
-import TextInput from './TextInput';
-import CheckBox from './CheckBox';
-import Button from './Button';
 import Info from './Info';
+import TextInput from './TextInput';
 
 export default function Column() {
     return (
@@ -17,7 +17,10 @@ export default function Column() {
                 <TextInput type="password" placeholder="Enter password" icon="lock" />
                 <TextInput type="password" placeholder="Confirm password" icon="lock_clock" />
                 <CheckBox text="I agree to the Terms & Conditions" />
-                <Button>Submit now</Button>
+                <Button>
+                    {' '}
+                    <span> Submit now</span>
+                </Button>
 
                 <Info>
                     Already have an account? <a href="login.html">Login</a> instead.

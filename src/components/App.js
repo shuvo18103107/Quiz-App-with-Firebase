@@ -1,14 +1,14 @@
 import '../styles/App.css';
 import Layout from './Layout';
 import Nav from './Nav';
-import Login from './pages/Login';
+import Quize from './pages/Quize';
 
 export default function App() {
     return (
         <div>
             <Nav />
             <Layout>
-                <Login />
+                <Quize />
             </Layout>
         </div>
     );
