@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import loginSvg from '../../assets/images/login.svg';
 import Button from '../Button';
 import Form from '../Form';
@@ -22,7 +23,7 @@ export default function Login() {
                         <span> Submit now</span>
                     </Button>
                     <Info>
-                        Don't have an account? <a href="signup.html">Signup</a> instead.
+                        Don't have an account? <Link to="/signup">Signup</Link> instead.
                     </Info>
                 </Form>
             </div>

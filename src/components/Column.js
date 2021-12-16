@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import signUpSvg from '../assets/images/signup.svg';
 import Button from './Button';
 import CheckBox from './CheckBox';
@@ -23,7 +24,7 @@ export default function Column() {
                 </Button>
 
                 <Info>
-                    Already have an account? <a href="login.html">Login</a> instead.
+                    Already have an account? <Link to="/login">Login</Link> instead.
                 </Info>
             </Form>
         </div>
