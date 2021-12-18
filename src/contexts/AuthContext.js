@@ -19,13 +19,17 @@ export function AuthProvider({ children }) {
     const [currentUser, setcurrentUser] = useState();
 
     useEffect(() => {
+        console.log('useeffect call');
+
         const auth = getAuth();
         // every signin,login,logout means auth e state change hole eta event callback hisave trigger korbe jar parameter e currentUser obj ta pabo
         const unsubscribe = onAuthStateChanged(auth, (user) => {
+            console.log('useeffect call inside authchange');
             setcurrentUser(user);
             setLoading(false);
         });
-        return unsubscribe; // new user set korar age clean up korbe age thn new user set dom change hole eta 1 bar e call hoye user set korbe abar login dom e gele  abar call hoye ager effect clean korbe thn onauthchange e new user set kore dibe . evabe dom to dom  jaowar age clean up kore 1 bar e call hoye user select korbe
+        return unsubscribe;
+        // DOm load howar por useeffect 1 bar e kaj korbe but  ekhane component / ba ei function tar vitore ager state na thakle clean up ta call hobe ex:1st time effect er vitor sob call hocee , signin call hoile onauthchange jehutu new state tai ager state unmount e new user set korci evabe prot auth change e age clean up e new state change kore nichiizs
     }, []);
     // signup function
     async function signup(email, password, userName) {
