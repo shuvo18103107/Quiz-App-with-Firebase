@@ -45,8 +45,9 @@ export default function useVideoList(page) {
                 seterror(true);
             }
         }
-
-        fetchVideos();
+        setTimeout(() => {
+            fetchVideos();
+        }, 2000);
     }, [page]);
     return {
         loading,

@@ -14,11 +14,17 @@ export default function Videos() {
                     className="infinite-scroll-component"
                     dataLength={videos.length}
                     hasMore={hasMore}
+                    loader={<h3 style={{ textAlign: 'center' }}>Loading...</h3>}
+                    // endMessage={
+                    //     <p style={{ textAlign: 'center' }}>
+                    //         <b>Yay! You have seen it all</b>
+                    //     </p>
+                    // }
                     next={() => setpage(page + 8)}
                 >
                     {videos.map((el) =>
                         el.noq > 0 ? (
-                            <Link to="/quize" key={el.youtubeID}>
+                            <Link to={`/quize/${el.youtubeID}`} key={el.youtubeID}>
                                 <Video questionNum={el.noq} title={el.title} id={el.youtubeID} />
                             </Link>
                         ) : (

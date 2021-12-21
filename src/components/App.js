@@ -21,8 +21,8 @@ export default function App() {
                         <PublicRoute exact path="/signup" component={Signup} />
                         <PublicRoute exact path="/login" component={Login} />
 
-                        <PrivateRoute exact path="/quize" component={Quize} />
-                        <PrivateRoute exact path="/result" component={Result} />
+                        <PrivateRoute exact path="/quize/:id" component={Quize} />
+                        <PrivateRoute exact path="/result/:id" component={Result} />
                         <Route component={NotFound} />
                     </Switch>
                 </Layout>
