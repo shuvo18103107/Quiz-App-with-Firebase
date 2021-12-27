@@ -6,6 +6,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import useQuestion from '../../hooks/useQuestion';
 import Answers from '../Answers';
+import Miniplayer from '../Miniplayer';
 import ProgressBar from '../ProgressBar';
 
 // handling state
@@ -118,6 +119,7 @@ export default function Quize() {
                         submit={handleSubmit}
                         percentage={percentage}
                     />
+                    <Miniplayer videoId={id} videoTitle={qna[currentQuestion].title} />
                 </>
             )}
         </div>
