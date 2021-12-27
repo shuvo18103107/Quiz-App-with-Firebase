@@ -26,7 +26,7 @@ function reducer(state, action) {
             // copy the questions array we get from firebase, for deeply copy here we use loadash
             // eslint-disable-next-line no-case-declarations
             const questions = _.cloneDeep(state); // db theke fetch kore anar por check false kora array of obj state
-            questions[action.questionId].options[action.optionIndex].checked = action.value;
+            questions[action.questionId].options[action.optionIndex].checked = action.value; // abar jokhn set korbo tokhn jate muted na hoi tai clone kore kaj korbo cg amra component render hole age false kore dibo erpr control way te form handle kore true korbo, cg amra same property valu edit korci tai clone kroe edit kora vlo
             return questions;
         default:
             return state;
@@ -110,6 +110,7 @@ export default function Quize() {
                     <Answers
                         options={qna[currentQuestion].options}
                         handleChange={handleAnswerChange}
+                        input
                     />
                     <ProgressBar
                         prevBtn={handleprevQuestion}

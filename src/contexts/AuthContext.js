@@ -60,7 +60,7 @@ export function AuthProvider({ children }) {
     const value = {
         currentUser,
         signup,
-        login,
+        login, // promise handle hobe jekhane call korbo
         logout,
     };
     return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;
