@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react';
-import successImg from '../assets/images/success.png';
-import useFetch from '../hooks/useFetch';
+import React from 'react';
+import image from '../assets/images/success.png';
 import classes from '../styles/Summary.module.css';
 
 export default function Summary({ score, noq }) {
+    /*
     const getKeyword = useMemo(() => {
         if ((score / (noq * 5)) * 100 < 50) {
             return 'failed';
@@ -28,6 +28,7 @@ export default function Summary({ score, noq }) {
     // usefetch e amra obj pass korci jeta protibar call e newly req korbe , cg object ref type, karon ekhane headers obj ta dependency hisave ace tai 1st time call korar por usefetch e data asar por abar newly header obj call korbe ete useeffect e dependency change hobe thn again req loop e pore jabe
     const image = result ? result?.photos[0].src.medium : successImg;
     console.log(image);
+    */
     return (
         <div className={classes.summary}>
             <div className={classes.point}>
@@ -36,14 +37,17 @@ export default function Summary({ score, noq }) {
                     {score} out of {noq * 5}
                 </p>
             </div>
-            {loading && <div className={classes.badge}>Loading your badge ⌛...</div>}
-            {error && <div className={classes.badge}>An error occured! ⚠️</div>}
+            {/* {loading && <div className={classes.badge}>Loading your badge ⌛...</div>}
+            {error && <div className={classes.badge}>An error occured! ⚠️</div>} */}
 
-            {!loading && !error && (
+            {/* {!loading && !error && (
                 <div className={classes.badge}>
                     <img src={image} alt="Success" />
                 </div>
-            )}
+            )} */}
+            <div className={classes.badge}>
+                <img src={image} alt="Success" />
+            </div>
         </div>
     );
 }
