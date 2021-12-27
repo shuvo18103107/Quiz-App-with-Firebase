@@ -36,11 +36,17 @@ function reducer(state, action) {
 
 export default function Quize() {
     const history = useHistory();
+    const { location } = history;
+
+    // const { state } = location;
+    // const { videoTitle } = state;
+    console.log(location.data);
     const { id } = useParams();
     const { currentUser } = useAuth();
     // eslint-disable-next-line no-unused-vars
     const [currentQuestion, setcurrentQuestion] = useState(0);
     const { loading, error, questions } = useQuestion(id);
+    console.log(questions);
     // questions er obj er child e je optiongula ace segulai checked name ekta property insert korbo false hisave ,jate proe user je optuin gulai click korbe segula true kore ektat state maintain korte pari
     const [qna, dispatch] = useReducer(reducer, initialState);
     // ekhn ei qna ta amra db er questions ke modify kore pelam, checkbox e tick dile amra ei qna state ta modify kore dibo
@@ -119,9 +125,10 @@ export default function Quize() {
                         submit={handleSubmit}
                         percentage={percentage}
                     />
-                    <Miniplayer videoId={id} videoTitle={qna[currentQuestion].title} />
+                    <Miniplayer videoId={id} />
                 </>
             )}
         </div>
     );
 }
+// miniplayer e  title ta pathabo but link to te obj akare state e data pathano jacee na

@@ -24,7 +24,17 @@ export default function Videos() {
                 >
                     {videos.map((el) =>
                         el.noq > 0 ? (
-                            <Link to={`/quize/${el.youtubeID}`} key={el.youtubeID}>
+                            // url set korar passapasi to te objakare data o pathate pari tahole oi specific page theke data recieve koraow jabe history.push diye , so state url e 2 vabe pathano jai to or history.push 2 jaigai e obj akare pass kore history diye recieve korte hoi
+                            <Link
+                                to={{
+                                    pathname: `/quiz/${el.youtubeID}`,
+                                    // BUG -> to parameter e state e data pathano jacee na v5 e
+                                    data: {
+                                        title: el.title,
+                                    },
+                                }}
+                                key={el.youtubeID}
+                            >
                                 <Video questionNum={el.noq} title={el.title} id={el.youtubeID} />
                             </Link>
                         ) : (
